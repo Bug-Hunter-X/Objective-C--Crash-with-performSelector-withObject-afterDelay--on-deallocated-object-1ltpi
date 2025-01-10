@@ -1,0 +1,1 @@
+This bug arises when using the `performSelector:withObject:afterDelay:` method in Objective-C.  If the object whose selector is being performed is deallocated before the delay expires, a crash will occur. This is because the selector is now trying to send a message to a deallocated object.  The crash typically manifests as an EXC_BAD_ACCESS exception.
